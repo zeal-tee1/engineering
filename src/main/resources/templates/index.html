@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>welcome</title>
+</head>
+<style>
+body
+{
+ background-image: url(zero.jpg);
+ background-attachment: scroll;
+}
+ .menu ul 
+{ 
+ list-style: none;
+}
+.menu ul li
+{
+  background: orange;
+  border: 1px solid white;
+  width: 240px;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  position: relative;
+  float: left;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+}
+.menu ul li a:hover
+{
+  color: red;
+  font-weight: bold;
+}
+.menu ul ul
+{
+  position: absolute;
+  display: none;
+  
+}
+.menu ul li:hover > ul
+{
+  display: block;
+}
+@keyframes welcomes
+{
+  0% {left: 0px;}
+  25% {left: 600px;}
+  50% {left: 900px;}
+  75% {left: 600px;}
+  100% {left: 0px;}
+}
+@-webkit-keyframes welcomes
+{
+  0% {left: 0px;}
+  25% {left: 600px;}
+  50% {left: 900px;}
+  75% {left: 600px;}
+  100% {left: 0px;}
+}
+@-moz-keyframes welcomes
+{
+  0% {left: 0px;}
+  25% {left: 600px;}
+  50% {left: 900px;}
+  75% {left: 600px;}
+  100% {left: 0px;}
+}
+h1
+{
+  color: red;
+  position: relative;
+  animation: welcomes 3s infinite;
+  -webkit-animation: welcomes 3s infinite;
+  -moz-animation: welcomes 3s infinite;
+}
+h2
+{
+   text-align: center;
+   color: black; 
+   
+}
+h2:hover
+{
+   color: green;
+  font-weight: bold;
+}
+h3
+{
+ color: white;
+ text-align: center;
+}
+</style>
+<body>
+     <div class = "menu">
+          
+          <ul>
+              <li> <a th:href = "@{/index}">HOME</a> </li>
+              <li> <a th:href = "@{/index}">ORDERS</a> 
+                 <ul>
+                     <li> <a th:href = "@{/orders}">Make order</a> </li>
+                     <li> <a th:href = "@{/canorder}">Cancel order</a> </li>
+                 </ul>
+              </li>   
+              <li> <a th:href = "@{/index}">PAYMENTS</a> 
+                  <ul>
+                     <li> <a th:href = "@{/ecocash}">Eco-cash</a> </li>
+                     <li> <a th:href = "@{/swip}">Swipe</a> </li>
+                     <li> <a th:href = "@{/cash}">Cash</a> </li>
+                 </ul>
+              </li>
+              <li> <a th:href = "@{/index}">DELIVERIES</a> 
+                   <ul>
+                     <li> <a th:href = "@{/license}">TermsnCnds</a> </li>
+                     <li> <a th:href = "@{/tracker}">Trace driver</a> </li>
+                 </ul>
+              </li>
+                 
+              <li> <a th:href = "@{/aboutus}">ABOUT US</a> </li>
+              
+          </ul>
+     </div>
+     <br></br><br>
+     <h1>
+     Welcome to Mobile Fast-Foods
+     </h1>
+     <br></br><br><br></br><br><br></br>
+     <h2>
+     <a th:href = "@{/contact}">Call-us</a>
+     </h2>
+     <br></br><br><br></br><br><br></br>
+      <h2>
+     <a th:href = "@{/contact}">App-us</a>
+     </h2>
+     <br><br></br><br><br><br><br></br> 
+     <h2>
+     <a th:href = "@{/contact}">Text-us</a>
+     </h2>
+     <br><br>
+     <h3>All Copyrights Reserved</h3>
+     <h3>@2020</h3>
+     
+</body>
+</html>
